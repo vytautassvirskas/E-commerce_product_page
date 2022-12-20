@@ -1,0 +1,17 @@
+@import "../../../Styles/Variables.scss";
+
+.navigation {
+	&__list {
+		@include flexCenter;
+		list-style: none;
+		gap: 30px;
+	}
+	&__item {
+		color: $DarkGrayishBlue;
+		font-weight: $fontBold;
+		cursor: pointer;
+	}
+	&__item:hover {
+		color: $VeryDarkBlue;
+	}
+}

@@ -1,0 +1,12 @@
+@import "../../../Styles/Variables.scss";
+
+.cart-img {
+	cursor: pointer;
+	fill: tomato;
+	// &__path:hover {
+	// 	fill: $VeryDarkBlue;
+	// }
+}
+.cart-img:hover .cart-img__path {
+	fill: $VeryDarkBlue;
+}
