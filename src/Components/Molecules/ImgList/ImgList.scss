@@ -1,0 +1,13 @@
+@import "../../../Styles/Variables.scss";
+
+.imgs-list{
+    @include flexSpaceBtwn;
+    width: 100%;
+    margin-top: 30px;
+    &__item{
+        width: 85px;
+        height: 85px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}

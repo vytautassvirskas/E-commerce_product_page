@@ -3,7 +3,6 @@
 .navigation {
 	&__list {
 		@include flexCenter;
-		list-style: none;
 		gap: 30px;
 	}
 	&__item {

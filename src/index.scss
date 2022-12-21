@@ -21,6 +21,9 @@ video {
 	display: block;
 	max-width: 100%;
 }
+li{
+	list-style: none;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 @import "./src/Styles/Variables.scss";

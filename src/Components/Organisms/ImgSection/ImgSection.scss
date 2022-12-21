@@ -1,0 +1,11 @@
+@import "../../../Styles/Variables.scss";
+
+.imgs{
+  @include flexClmnCenter;
+  max-width: 415px;
+  &__lrg-img{
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+}
