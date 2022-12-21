@@ -1,0 +1,8 @@
+@import "../../../Styles/Variables.scss";
+
+.last-price{
+    color:$DarkGrayishBlue;
+    text-decoration: line-through;
+    font-weight: $fontBold;
+
+}

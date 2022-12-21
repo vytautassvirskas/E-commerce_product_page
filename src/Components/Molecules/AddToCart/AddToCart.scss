@@ -1,0 +1,37 @@
+@import "../../../Styles/Variables.scss";
+
+.add-cart{
+    @include flexSpaceBtwn;
+    background-color: white;
+    gap: 30px;
+    width: 100%;
+    &__amount-wrapper{
+        @include flexCenter;
+        justify-content: space-around;
+        width: 50%;
+        gap: 20px;
+        padding: 20px;
+        background-color: $LightGrayishBlue;
+        border-radius: 10px;
+    };
+    &__changer{
+        cursor: pointer;
+    };
+    &__amount{
+        font-weight: $fontBold;
+    };
+    &__cart{
+        margin-right: 15px
+    };
+    &__btn{
+        @include flexCenter;
+        width: 50%;
+        background-color: $primaryorange;
+        border-radius: 10px;
+        padding: 20px;
+        border: 1px solid $primaryorange;
+        font-weight: $fontBold;
+        color: $White;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,9 @@
+@import "../../../Styles/Variables.scss" ;
+
+.discount{
+    color: $primaryorange;
+    background-color: $primaryPaleorange ;  
+    border-radius: 5px;
+    padding: 5px 8px ;
+    font-weight: $fontBold;
+}

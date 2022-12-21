@@ -1,0 +1,7 @@
+@import "../../../Styles/Variables.scss";
+
+.item-section{
+    @include flexClmnCenter;
+    align-items: flex-start;
+    max-width: 415px;
+}

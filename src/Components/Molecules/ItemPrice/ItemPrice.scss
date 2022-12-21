@@ -1,0 +1,10 @@
+@import "../../../Styles/Variables.scss";
+
+.item-price-wrapper{
+    margin-bottom: 25px;
+
+    &__price{
+        @include flexCenter;
+        gap: 15px;
+    }
+}
