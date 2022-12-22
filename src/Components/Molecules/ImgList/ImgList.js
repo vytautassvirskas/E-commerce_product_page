@@ -1,15 +1,19 @@
-import React,{memo} from 'react';
+import React from 'react';
 import SmImg from '../../Atoms/SmImg/SmImg';
 import './ImgList.scss';
 
-const ImgList = ({ data, setSelectedIndex }) => {
-	console.log("renderinasi nors props nesikeicia")
+const ImgList = ({ data, setSelectedIndex,selectedIndex }) => {
+	console.log("ImgList renderinasi nors props nesikeicia")
 	return (
 		<ul className="imgs-list">
 			{data.map((img, index) => {
 				return (
-					<li className="imgs-list__item"	key={index}	onClick={() =>setSelectedIndex(index)}>
+					<li className={selectedIndex==index ? "imgs-list__item":"imgs-list__item-hover"}	key={index}	
+					onClick={() =>setSelectedIndex(index)}>
 						<SmImg img={img.smallImg} />
+						<div 
+						className={selectedIndex==index ? "imgs-list__selected":""}>
+						</div>
 					</li>
 				);
 			})}
@@ -17,4 +21,4 @@ const ImgList = ({ data, setSelectedIndex }) => {
 	);
 };
 
-export default memo(ImgList);
+export default ImgList;

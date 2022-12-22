@@ -1,7 +1,8 @@
 @import "../../Styles/Variables.scss";
 
 .main{
-    margin-top: 85px;
     @include flexCenter;
+    position: relative;
+    margin-top: 85px;
     gap: 100px;
 }

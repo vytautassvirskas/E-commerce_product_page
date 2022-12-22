@@ -1,10 +1,11 @@
 import React from 'react';
+import "./LrgImg.scss"
 
 const LrgImg = ({ selectedIndex,data }) => {
 
 	return (
 		<>
-			<img src={data[selectedIndex].largeImg} alt="product-photo" />
+			<img className='lrg-image' src={data[selectedIndex].largeImg} alt="product-photo" />
 		</>
 	);
 };

@@ -1,25 +1,34 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect, useContext } from 'react';
+import MainContext from '../../../Utils/MainContext';
 import LrgImg from '../../Atoms/LrgImg/LrgImg';
 import ImgList from '../../Molecules/ImgList/ImgList';
 import './ImgSection.scss';
-import {imgArr as data} from "../../../Utils/data.js"
+
 
 const ImgSection = () => {
-	const [ selectedIndex, setSelectedIndex ] = useState(0);
+	
+	const {lightbox,setLightbox,data,selectedIndex,setSelectedIndex} = useContext(MainContext)
+	
+	console.log("ImgSection component setLightbox bollean:", lightbox)
 
-	useEffect(()=>{
-		console.log('selectedIndex imgSection useEffecte: ', selectedIndex);
-	},[selectedIndex])
+	// useEffect(()=>{
+	// 	console.log('selectedIndex imgSection useEffecte: ', selectedIndex);
+	// },[selectedIndex])
 
-	console.log('selectedIndex imgSection: ', selectedIndex);	//istrinti
+	// 	//istrinti
+	// console.log('selectedIndex imgSection: ', selectedIndex);
+
+	
 
 	return (
 		<section className='imgs'>
 			{console.log("renderinasi JSX img section")}
-			<div className='imgs__lrg-img'>
+			<div className='imgs__lrg-img' 
+			onClick={()=>setLightbox(true)}
+			>
 				<LrgImg selectedIndex={selectedIndex} data={data}  />
 			</div>
-			<ImgList data={data} setSelectedIndex={setSelectedIndex} />
+			<ImgList data={data} setSelectedIndex={setSelectedIndex} selectedIndex={selectedIndex} />
 		</section>
 	);
 };

@@ -13,7 +13,7 @@ const Header = () => {
 				<Navbar />
 			</div>
 			<div className="header__user-cart-wrapper">
-				<Cart />
+				<Cart color={"#69707D"} hover={true} />
 				<div className="header__user-img-wrapper">
 					<User />
 				</div>

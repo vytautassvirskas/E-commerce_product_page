@@ -1,0 +1,53 @@
+@import "../../../Styles/Variables.scss";
+
+.lightbox{
+    @include flexCenter;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: $Blacklightbox;
+    &__wrapper{
+        @include flexClmnCenter;
+        max-width: 550px;
+    }
+    &__lrg-img{
+        position: relative;
+    };
+    &__close-btn{
+        position: absolute;
+        right: 0;
+        top: -30px;
+        fill: $White;
+        cursor: pointer;
+        transition: fill 0.2s ease-out;
+        &:hover{
+            fill: $primaryorange;
+        }
+    };
+    &__next{
+        @include flexCenter;
+        position: absolute;
+        top: 50%;
+        right: -25px;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 50%;
+        stroke: black;
+        cursor: pointer;
+        transition: fill 0.2s ease-out;
+        &:hover{
+            stroke: $primaryorange;
+        }
+    };
+    &__previous{
+        @extend .lightbox__next;
+        left: -25px;
+        
+    };
+    &__list-wrapper{
+        width: 100%;
+        padding: 0 25px 0 25px;
+    }
+}
+
