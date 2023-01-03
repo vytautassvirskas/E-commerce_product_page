@@ -4,12 +4,12 @@ import ItemTitle from '../../Atoms/ItemTitle/ItemTitle'
 import MakerTitle from '../../Atoms/MakerTitle/MakerTitle'
 import "./ItemText.scss"
 
-const ItemText = () => {
+const ItemText = ({data}) => {
   return (
     <div className='item-text-wrapper'>
-        <MakerTitle/>
-        <ItemTitle/>
-        <ItemDescrp/>
+        <MakerTitle company={data.company}/>
+        <ItemTitle title={data.title}/>
+        <ItemDescrp description={data.description}/>
     </div>
   )
 }

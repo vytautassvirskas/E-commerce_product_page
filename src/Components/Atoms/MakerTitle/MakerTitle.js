@@ -1,9 +1,9 @@
 import React from 'react'
 import "./MakerTitle.scss"
 
-const MakerTitle = () => {
+const MakerTitle = ({company}) => {
   return (
-    <h2 className='maker-title'>Sneaker company</h2>
+    <h2 className='maker-title'>{company}</h2>
   )
 }
 

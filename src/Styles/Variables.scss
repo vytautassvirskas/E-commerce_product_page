@@ -1,6 +1,7 @@
 //COLORS
 $primaryorange: hsl(26, 100%, 55%);
-$primaryPaleorange: hsl(25, 100%, 94%);
+$primaryPaleorange2: hsl(25, 100%, 94%);
+$primaryPaleorange: hsl(25, 100%, 77%);
 
 $VeryDarkBlue: hsl(220, 13%, 13%);
 $DarkGrayishBlue: hsl(219, 9%, 45%);
@@ -12,26 +13,47 @@ $White: hsl(0, 0%, 100%);
 $Blacklightbox: hsla(0, 0, 0, 0.75);
 
 //FONTS
-$primaryFont: 'Kumbh Sans', sans-serif;
+$primaryFont: "Kumbh Sans", sans-serif;
 $fontLight: 400;
 $fontBold: 700;
 
-
 //CSS CODES
 @mixin flexCenter {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin flexSpaceBtwn {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 @mixin flexClmnCenter {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin orangeBtn {
+  @include flexCenter;
+  background-color: $primaryorange;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid $primaryorange;
+  font-weight: $fontBold;
+  color: $White;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border 0.2s ease;
+}
+@mixin orangeBtnHover {
+  @include flexCenter;
+  background-color: $primaryPaleorange;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid $primaryPaleorange;
+  font-weight: $fontBold;
+  color: $White;
+  cursor: pointer;
 }

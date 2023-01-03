@@ -1,9 +1,9 @@
 import React from 'react'
 import "./LastPrice.scss"
 
-const LastPrice = () => {
+const LastPrice = ({lastPrice}) => {
   return (
-    <div className='last-price'>&#36;250.00</div>
+    <div className='last-price'>&#36;{lastPrice?.toFixed(2)}</div>
   )
 }
 

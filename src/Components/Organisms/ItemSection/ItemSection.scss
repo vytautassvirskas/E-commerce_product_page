@@ -1,7 +1,42 @@
 @import "../../../Styles/Variables.scss";
 
-.item-section{
-    @include flexClmnCenter;
-    align-items: flex-start;
-    max-width: 415px;
+.item-section {
+  @include flexClmnCenter;
+  align-items: flex-start;
+  position: relative;
+  max-width: 415px;
+  &__message {
+    position: absolute;
+    bottom: -50px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    color: $primaryorange;
+    background-color: $primaryPaleorange2;
+    opacity: 0;
+  }
+  &__message-fadeIn {
+    animation: fadeIn 1s forwards;
+  }
+  &__message-fadeOut {
+    animation: fadeOut 1s forwards;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

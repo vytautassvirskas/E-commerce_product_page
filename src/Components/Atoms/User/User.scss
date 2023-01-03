@@ -1,0 +1,11 @@
+@import "../../../Styles/Variables.scss";
+
+.user {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border 0.2s ease;
+  &:hover {
+    border: 2px solid $primaryorange;
+    border-radius: 50%;
+  }
+}

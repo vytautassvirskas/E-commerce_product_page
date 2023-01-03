@@ -7,10 +7,16 @@
 	}
 	&__item {
 		color: $DarkGrayishBlue;
-		font-weight: $fontBold;
+		padding: 40px 0 40px;
+		border-bottom: 3px solid transparent;
 		cursor: pointer;
-	}
-	&__item:hover {
-		color: $VeryDarkBlue;
+		transition: border-bottom 0.2s ease, 
+					color 0.2s ease;
+		&:hover{
+			border-bottom: 3px solid $primaryorange;
+			border-bottom: 3px solid $primaryorange;
+			color: $VeryDarkBlue;
+
+		}
 	}
 }

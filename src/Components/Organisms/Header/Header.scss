@@ -1,20 +1,39 @@
 @import "../../../Styles/Variables.scss";
 
 .header {
-	@include flexSpaceBtwn;
-	padding: 25px 0 30px;
-	border-bottom: 2px solid $LightGrayishBlue;
+  @include flexSpaceBtwn;
+  position: relative;
+  border-bottom: 2px solid $LightGrayishBlue;
 
-	&__logo-nav-wrapper {
-		@include flexCenter;
-	}
-	&__user-cart-wrapper {
-		@include flexCenter;
-		gap: 50px;
-	}
-	&__user-img-wrapper {
-		width: 50px;
-		height: 50px;
-		cursor: pointer;
-	}
+  &__logo-nav-wrapper {
+    @include flexCenter;
+  }
+  &__user-cart-wrapper {
+    @include flexCenter;
+    gap: 50px;
+  }
+  &__cart-img-wrapper {
+    position: relative;
+    fill: $DarkGrayishBlue;
+    cursor: pointer;
+    transition: fill 0.2s ease;
+    &:hover {
+      fill: $VeryDarkBlue;
+    }
+  }
+  &__cart-amount {
+    position: absolute;
+    padding: 1px 8px;
+    border-radius: 8px;
+    font-size: 8px;
+    top: -5px;
+    right: -4px;
+    background: $primaryorange;
+    color: white;
+  }
+  &__user-img-wrapper {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
 }

@@ -1,13 +1,13 @@
-import React from 'react';
-import UserImg from '../../../Assets/image-avatar.png';
+import React from "react";
+import UserImg from "../../../Assets/image-avatar.png";
+import "./User.scss";
 
 const User = () => {
-
-	return (
-		<>
-			<img src={UserImg} alt="user-photo" />
-		</>
-	);
+  return (
+    <>
+      <img className="user" src={UserImg} alt="user-photo" />
+    </>
+  );
 };
 
 export default User;

@@ -1,9 +1,9 @@
 import React from 'react'
 import "./CurrentPrice.scss"
 
-const CurrentPrice = () => {
+const CurrentPrice = ({currentPrice}) => {
   return (
-    <span className='current-price'>&#36;125.00</span>
+    <span className='current-price'>&#36;{currentPrice?.toFixed(2)}</span>
   )
 }
 

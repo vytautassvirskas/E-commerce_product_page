@@ -1,37 +1,58 @@
 @import "../../../Styles/Variables.scss";
 
-.add-cart{
-    @include flexSpaceBtwn;
-    background-color: white;
-    gap: 30px;
-    width: 100%;
-    &__amount-wrapper{
-        @include flexCenter;
-        justify-content: space-around;
-        width: 50%;
-        gap: 20px;
-        padding: 20px;
-        background-color: $LightGrayishBlue;
-        border-radius: 10px;
-    };
-    &__changer{
-        cursor: pointer;
-    };
-    &__amount{
-        font-weight: $fontBold;
-    };
-    &__cart{
-        margin-right: 15px
-    };
-    &__btn{
-        @include flexCenter;
-        width: 50%;
-        background-color: $primaryorange;
-        border-radius: 10px;
-        padding: 20px;
-        border: 1px solid $primaryorange;
-        font-weight: $fontBold;
-        color: $White;
-        cursor: pointer;
+.add-cart {
+  @include flexSpaceBtwn;
+  background-color: white;
+  gap: 30px;
+  width: 100%;
+  &__amount-wrapper {
+    @include flexCenter;
+    justify-content: space-between;
+    width: 50%;
+    gap: 20px;
+    padding: 20px;
+    background-color: $LightGrayishBlue;
+    border-radius: 10px;
+  }
+  &__changer {
+    @include flexCenter;
+    width: 20px;
+    height: 20px;
+    fill: $primaryorange;
+    cursor: pointer;
+    transition: fill 0.2s ease;
+    &:hover {
+      fill: $primaryPaleorange;
     }
+  }
+  &__amount {
+    font-weight: $fontBold;
+    width: 100%;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    &:focus{
+      outline: none;
+    }
+  }
+  &__cart {
+    margin-right: 15px;
+    fill: $White;
+  }
+  &__btn {
+    @include orangeBtn;
+    width: 50%;
+    &:hover {
+      @include orangeBtnHover;
+    }
+  }
+}
+
+.add-cart__amount::-webkit-outer-spin-button,
+.add-cart__amount::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.add-cart__amount[type=number] {
+  -moz-appearance: textfield;
 }
