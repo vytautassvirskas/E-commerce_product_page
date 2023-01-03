@@ -9,12 +9,11 @@ import Previous from "../../Atoms/Previous/Previous";
 import "./LightBox.scss";
 
 const LightBox = () => {
-  const { lightbox, setLightbox, data, selectedIndex, setSelectedIndex } =
-    useContext(MainContext);
-  console.log("data.images.length: ", data.images.length);
+  const { setLightbox, data, selectedIndex } = useContext(MainContext);
+  const [lightboxIndex, setLightboxIndex] = useState(selectedIndex);
 
   const handleNext = () => {
-    setSelectedIndex((prevValue) => {
+    setLightboxIndex((prevValue) => {
       if (prevValue === data.images.length - 1) return prevValue;
 
       return prevValue + 1;
@@ -22,7 +21,7 @@ const LightBox = () => {
   };
 
   const handlePrevious = () => {
-    setSelectedIndex((prevValue) => {
+    setLightboxIndex((prevValue) => {
       if (prevValue == 0) return prevValue;
 
       return prevValue - 1;
@@ -39,7 +38,7 @@ const LightBox = () => {
           >
             <Close />
           </div>
-          <LrgImg selectedIndex={selectedIndex} data={data.images} />
+          <LrgImg selectedIndex={lightboxIndex} data={data.images} />
           <div className="lightbox__next" onClick={handleNext}>
             <Next />
           </div>
@@ -50,8 +49,8 @@ const LightBox = () => {
         <div className="lightbox__list-wrapper">
           <ImgList
             data={data.images}
-            setSelectedIndex={setSelectedIndex}
-            selectedIndex={selectedIndex}
+            setSelectedIndex={setLightboxIndex}
+            selectedIndex={lightboxIndex}
           />
         </div>
       </div>

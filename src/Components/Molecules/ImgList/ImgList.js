@@ -8,11 +8,11 @@ const ImgList = ({ data, setSelectedIndex,selectedIndex }) => {
 		<ul className="imgs-list">
 			{data.map((img, index) => {
 				return (
-					<li className={selectedIndex==index ? "imgs-list__item":"imgs-list__item-hover"}	key={index}	
+					<li className="imgs-list__item" key={index}	
 					onClick={() =>setSelectedIndex(index)}>
 						<SmImg img={img.smallImg} />
 						<div 
-						className={selectedIndex==index ? "imgs-list__selected":""}>
+						className={selectedIndex==index ? "imgs-list__selected":"imgs-list__item-hover"}>
 						</div>
 					</li>
 				);
