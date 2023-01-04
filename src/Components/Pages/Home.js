@@ -5,6 +5,7 @@ import ImgSection from "../Organisms/ImgSection/ImgSection";
 import Header from "../Organisms/Header/Header";
 import ItemSection from "../Organisms/ItemSection/ItemSection";
 import LightBox from "../Organisms/LightBox/LightBox";
+import ImgSectionMobile from "../Organisms/ImgSectionMobile/ImgSectionMobile";
 import "./Home.scss";
 
 const Home = () => {
@@ -13,9 +14,12 @@ const Home = () => {
   const [cartItem, setCartItem] = useState({});
 
   const contextValue = {
-    lightbox,setLightbox,
-    selectedIndex,setSelectedIndex,
-    cartItem, setCartItem,
+    lightbox,
+    setLightbox,
+    selectedIndex,
+    setSelectedIndex,
+    cartItem,
+    setCartItem,
     data,
   };
   // console.log("cartItem Home komponente: ",cartItem)
@@ -25,6 +29,7 @@ const Home = () => {
         <Header />
         <main className="main">
           <ImgSection />
+          <ImgSectionMobile />
           <ItemSection />
           {lightbox ? <LightBox /> : null}
         </main>

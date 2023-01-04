@@ -6,6 +6,7 @@
   position: relative;
   max-width: 415px;
   &__message {
+    display: none;
     position: absolute;
     bottom: -50px;
     padding: 5px;
@@ -16,6 +17,7 @@
     opacity: 0;
   }
   &__message-fadeIn {
+    display: block;
     animation: fadeIn 1s forwards;
   }
   &__message-fadeOut {

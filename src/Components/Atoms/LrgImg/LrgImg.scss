@@ -1,3 +1,9 @@
-.lrg-image{
-    border-radius: 15px;
+.lrg-image {
+  border-radius: 15px;
+}
+
+@media (width<=768px) {
+  .lrg-image {
+    border-radius: 0;
+  }
 }

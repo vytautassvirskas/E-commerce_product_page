@@ -7,3 +7,9 @@
     cursor: pointer;
   }
 }
+
+@media (width <= 768px) {
+  .imgs-section {
+    display: none;
+  }
+}

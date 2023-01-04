@@ -1,0 +1,22 @@
+@import "../../../Styles/Variables.scss";
+
+.imgs-section-mobile {
+  width: 100vw;
+  position: relative;
+  &__next {
+    @include nextPrvsBtn;
+    top: calc(50% - 25px); //subtract half of diameter of btn
+    right: 15px;
+  }
+  &__previous {
+    @include nextPrvsBtn;
+    top: calc(50% - 25px); //subtract half of diameter of btn
+    left: 15px;
+  }
+}
+
+@media (width >= 768px) {
+  .imgs-section-mobile {
+    display: none;
+  }
+}

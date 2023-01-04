@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import MainContext from "../../../Utils/MainContext";
+import { handleNext, handlePrevious } from "../../../Utils/Utils.js";
 import LrgImg from "../../Atoms/LrgImg/LrgImg";
 import ImgList from "../../Molecules/ImgList/ImgList";
 import Close from "../../Atoms/Close/Close";
@@ -12,21 +13,22 @@ const LightBox = () => {
   const { setLightbox, data, selectedIndex } = useContext(MainContext);
   const [lightboxIndex, setLightboxIndex] = useState(selectedIndex);
 
-  const handleNext = () => {
-    setLightboxIndex((prevValue) => {
-      if (prevValue === data.images.length - 1) return prevValue;
+  //ISTRINTI
+  // const handleNext = () => {
+  //   setLightboxIndex((prevValue) => {
+  //     if (prevValue === data.images.length - 1) return prevValue;
 
-      return prevValue + 1;
-    });
-  };
+  //     return prevValue + 1;
+  //   });
+  // };
 
-  const handlePrevious = () => {
-    setLightboxIndex((prevValue) => {
-      if (prevValue == 0) return prevValue;
+  // const handlePrevious = () => {
+  //   setLightboxIndex((prevValue) => {
+  //     if (prevValue == 0) return prevValue;
 
-      return prevValue - 1;
-    });
-  };
+  //     return prevValue - 1;
+  //   });
+  // };
 
   return (
     <section className="lightbox">
@@ -39,10 +41,16 @@ const LightBox = () => {
             <Close />
           </div>
           <LrgImg selectedIndex={lightboxIndex} data={data.images} />
-          <div className="lightbox__next" onClick={handleNext}>
+          <div
+            className="lightbox__next"
+            onClick={() => handleNext(setLightboxIndex, data)}
+          >
             <Next />
           </div>
-          <div className="lightbox__previous" onClick={handlePrevious}>
+          <div
+            className="lightbox__previous"
+            onClick={() => handlePrevious(setLightboxIndex)}
+          >
             <Previous />
           </div>
         </div>

@@ -64,3 +64,17 @@ $fontBold: 700;
   color: $White;
   cursor: pointer;
 }
+@mixin nextPrvsBtn {
+  @include flexCenter;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  stroke: black;
+  cursor: pointer;
+  transition: fill 0.2s ease-out;
+  &:hover {
+    stroke: $primaryorange;
+  }
+}
