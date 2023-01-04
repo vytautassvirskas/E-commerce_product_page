@@ -7,7 +7,7 @@ export const handleNext = (setLightboxIndex, data) => {
 };
 export const handlePrevious = (setLightboxIndex) => {
   setLightboxIndex((prevValue) => {
-    if (prevValue == 0) return prevValue;
+    if (prevValue === 0) return prevValue;
 
     return prevValue - 1;
   });

@@ -1,0 +1,38 @@
+@import "../../../Styles//Variables.scss";
+
+.cart-message {
+  display: none;
+  position: absolute;
+  bottom: 75px;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 3px;
+  color: $primaryorange;
+  background-color: $primaryPaleorange2;
+  opacity: 0;
+  &__fadeIn {
+    display: block;
+    animation: fadeIn $fadeInOutMessage forwards;
+  }
+  &__fadeOut {
+    animation: fadeOut $fadeInOutMessage forwards;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

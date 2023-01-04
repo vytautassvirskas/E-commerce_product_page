@@ -7,10 +7,10 @@
   &__logo-nav-wrapper {
     @include flexCenter;
   }
-  &__logo-burger-wrapper{
-    display: none
+  &__logo-burger-wrapper {
+    display: none;
   }
-  &__navbar-mobile-background{
+  &__navbar-mobile-background {
     display: none;
   }
   &__user-cart-wrapper {
@@ -43,17 +43,18 @@
   }
 }
 
-@media (width <=768px){
-  .header{
+@media (width <=768px) {
+  .header {
     padding: 20px 0;
     &__logo-nav-wrapper {
       display: none;
     }
-    &__logo-burger-wrapper{
+    &__logo-burger-wrapper {
       @include flexSpaceBtwn;
       gap: 20px;
+      cursor: pointer;
     }
-    &__navbar-mobile-background{
+    &__navbar-mobile-background {
       display: block;
       position: absolute;
       background: $Blacklightbox;
@@ -62,8 +63,7 @@
       top: 0;
       z-index: 2;
       left: 0;
-      opacity:0;
-      
+      opacity: 0;
     }
     &__navbar-mobile-background-fadeIn {
       animation: fadeIn 0.3s forwards;
@@ -72,28 +72,27 @@
     &__navbar-mobile-background-fadeOut {
       animation: fadeOut 0.3s forwards;
     }
-    &__navbar-mobile-wrapper{
+    &__navbar-mobile-wrapper {
       background: white;
       width: 70%;
       height: 100%;
       padding: 40px 40px;
     }
-    &__navbar-mobile-close{
+    &__navbar-mobile-close {
       margin-bottom: 30px;
       fill: $GrayishBlue;
       cursor: pointer;
       transition: fill 0.2s ease;
-      &:hover{
-      fill: $DarkGrayishBlue;
+      &:hover {
+        fill: $DarkGrayishBlue;
       }
     }
     &__user-cart-wrapper {
       gap: 20px;
     }
-    &__user-img-wrapper{
+    &__user-img-wrapper {
       width: 30px;
       height: 30px;
     }
   }
 }
-

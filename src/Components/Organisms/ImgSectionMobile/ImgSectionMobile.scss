@@ -2,6 +2,7 @@
 
 .imgs-section-mobile {
   width: 100vw;
+  height: 300px;
   position: relative;
   &__next {
     @include nextPrvsBtn;

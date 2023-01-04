@@ -17,6 +17,13 @@ $primaryFont: "Kumbh Sans", sans-serif;
 $fontLight: 400;
 $fontBold: 700;
 
+//TIME DELAY
+$fadeInOutMessage: 1s;
+
+:export {
+  fadeInOutMessage: $fadeInOutMessage;
+}
+
 //CSS CODES
 @mixin flexCenter {
   display: flex;

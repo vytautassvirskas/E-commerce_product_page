@@ -5,23 +5,54 @@ import Plus from "../../Atoms/Plus/Plus";
 import Minus from "../../Atoms/Minus/Minus";
 import "./AddToCart.scss";
 
-const AddToCart = ({ handleMessage }) => {
+const AddToCart = ({ setMessage, message }) => {
   const [amount, setAmout] = useState(0);
   const [itemLimit, setItemLimit] = useState(10);
-  const { setCartItem, data } = useContext(MainContext);
+  const { cartItem, setCartItem, data } = useContext(MainContext);
 
   const handleAdd = (e) => {
-    setCartItem((prevValue) => {
-      if (prevValue.amount + amount > itemLimit) {
-        handleMessage();
-        console.log("max gali buti 10");
-        return { ...prevValue, amount: prevValue.amount };
-      }
+    //messages
+    const messageOne = `Max item amount to buy is ${itemLimit}! Your cart is full!`;
+    const messageTwo = `Max item amount to buy is ${itemLimit}! You can add ${
+      itemLimit - cartItem.amount
+    } items.`;
 
-      if (prevValue.amount) {
+    //conditions:
+    if (amount === 0) return;
+    // when cart will be full
+    if (cartItem.amount + amount === itemLimit) {
+      setMessage(messageOne);
+      setCartItem((prevValue) => {
         return { ...prevValue, amount: prevValue.amount + amount };
-      }
+      });
+      return;
+    }
 
+    //when cart is full
+    if (cartItem.amount === itemLimit) {
+      setMessage(messageOne);
+      return;
+    }
+
+    //when cart amount is near limit, but still you can add few items
+    if (cartItem.amount + amount > itemLimit) {
+      setMessage(messageTwo);
+      setCartItem((prevValue) => {
+        return { ...prevValue, amount: prevValue.amount };
+      });
+      return;
+    }
+
+    //when cart amount way less than limit
+    if (cartItem.amount) {
+      setCartItem((prevValue) => {
+        return { ...prevValue, amount: prevValue.amount + amount };
+      });
+      return;
+    }
+
+    //when cart is empty. first addition
+    setCartItem((prevValue) => {
       return {
         ...prevValue,
         amount: amount,
@@ -34,12 +65,12 @@ const AddToCart = ({ handleMessage }) => {
   };
 
   const handleIncrease = () => {
-    setAmout((prevAmount) => {
-      if (prevAmount === itemLimit) {
-        handleMessage();
-        return prevAmount;
-      }
+    if (amount === itemLimit) {
+      setMessage(`Max item amount to buy is ${itemLimit}!`);
+      return;
+    }
 
+    setAmout((prevAmount) => {
       return prevAmount + 1;
     });
   };
@@ -51,7 +82,7 @@ const AddToCart = ({ handleMessage }) => {
       return prevAmount - 1;
     });
   };
-
+  console.log("add to cart komeponentas renderinasi");
   return (
     <div className="add-cart">
       <div className="add-cart__amount-wrapper">
@@ -65,10 +96,10 @@ const AddToCart = ({ handleMessage }) => {
           onChange={(e) => setAmout(+e.target.value)}
         />
         <div className="add-cart__changer" onClick={handleIncrease}>
-          <Plus />
+          <Plus disabled={message} />
         </div>
       </div>
-      <button className="add-cart__btn" onClick={handleAdd}>
+      <button className="add-cart__btn" onClick={handleAdd} disabled={message}>
         <span className="add-cart__cart">
           <Cart />
         </span>

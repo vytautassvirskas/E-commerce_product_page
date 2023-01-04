@@ -7,7 +7,7 @@ import Previous from "../../Atoms/Previous/Previous";
 import "./ImgSectionMobile.scss";
 
 const ImgSectionMobile = () => {
-  const { setLightbox, data, selectedIndex, setSelectedIndex } =
+  const { data, selectedIndex, setSelectedIndex } =
     useContext(MainContext);
   return (
     <section className="imgs-section-mobile">
