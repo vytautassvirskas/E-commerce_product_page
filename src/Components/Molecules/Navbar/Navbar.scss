@@ -14,9 +14,29 @@
 					color 0.2s ease;
 		&:hover{
 			border-bottom: 3px solid $primaryorange;
-			border-bottom: 3px solid $primaryorange;
 			color: $VeryDarkBlue;
 
+		}
+	}
+}
+@media (width <=768px){
+	.navigation{
+		&__list {
+			@include flexCenter;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0;
+		}
+		&__item {
+			font-weight: $fontBold;
+			padding: 15px 0;
+			cursor: pointer;
+			transition:  
+						color 0.2s ease;
+			&:hover{
+				border-bottom: 3px solid transparent;
+				color: $VeryDarkBlue;
+			}
 		}
 	}
 }

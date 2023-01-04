@@ -31,7 +31,7 @@
     text-align: center;
     border: none;
     background-color: transparent;
-    &:focus{
+    &:focus {
       outline: none;
     }
   }
@@ -50,9 +50,29 @@
 
 .add-cart__amount::-webkit-outer-spin-button,
 .add-cart__amount::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
-.add-cart__amount[type=number] {
+.add-cart__amount[type="number"] {
   -moz-appearance: textfield;
+}
+
+@media (width <=1150px){
+  .add-cart {
+    @include flexClmnCenter;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+@media (width<=768px){
+	.add-cart{
+    &__amount-wrapper{
+      width: 100%;
+    }
+    &__btn {
+      width: 100%;
+    }
+
+	}
 }

@@ -8,3 +8,10 @@
         gap: 15px;
     }
 }
+
+@media (width<=768px){
+	.item-price-wrapper{
+        @include flexSpaceBtwn;
+        width: 100%; 
+	}
+}

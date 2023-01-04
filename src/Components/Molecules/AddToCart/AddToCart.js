@@ -10,7 +10,7 @@ const AddToCart = ({ handleMessage }) => {
   const [itemLimit, setItemLimit] = useState(10);
   const { setCartItem, data } = useContext(MainContext);
 
-  const handleAdd = () => {
+  const handleAdd = (e) => {
     setCartItem((prevValue) => {
       if (prevValue.amount + amount > itemLimit) {
         handleMessage();

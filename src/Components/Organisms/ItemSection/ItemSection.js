@@ -1,4 +1,4 @@
-import React, {useRef,useState, useContext, createRef } from "react";
+import React, { useRef, useState, useContext, createRef } from "react";
 import MainContext from "../../../Utils/MainContext.js";
 import CartMessage from "../../Atoms/CartMessage/CartMessage.js";
 import AddToCart from "../../Molecules/AddToCart/AddToCart";
@@ -8,32 +8,32 @@ import "./ItemSection.scss";
 
 const ItemSection = () => {
   const { data } = useContext(MainContext);
-  const ref = createRef()
+  const ref = createRef(null);
 
-  console.log("ref", ref)
+  console.log("ref in itemSection", ref);
 
   const handleMessage = () => {
- 
-    ref.current.classList.remove("item-section__message-fadeOut")
-    ref.current.classList.add("item-section__message-fadeIn")
-    console.dir("ref.current:",ref.current )
+    ref.current.classList.remove("item-section__message-fadeOut");
+    ref.current.classList.add("item-section__message-fadeIn");
+    console.log("ref in handleMessage:", ref);
 
     setTimeout(() => {
-      ref.current.classList.remove("item-section__message-fadeIn")
-      ref.current.classList.add("item-section__message-fadeOut")
-    },3000)
-  }
+      console.log("ref in handleMessage setTimout:", ref);
+      ref.current.classList.remove("item-section__message-fadeIn");
+      ref.current.classList.add("item-section__message-fadeOut");
+    }, 3000);
+  };
 
   return (
-    <section className = "item-section">
-      <ItemText data = {data.info} />
-      <ItemPrice data = {data.info} />
-      <AddToCart handleMessage = {handleMessage}  />
-      <CartMessage 
-        ref = {ref} 
-        message={"Max item amount to buy is 10!"} 
-        className = "item-section__message" 
-        />
+    <section className="item-section">
+      <ItemText data={data.info} />
+      <ItemPrice data={data.info} />
+      <AddToCart handleMessage={handleMessage} />
+      <CartMessage
+        ref={ref}
+        message={"Max item amount to buy is 10!"}
+        className="item-section__message"
+      />
     </section>
   );
 };
