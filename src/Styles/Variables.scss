@@ -19,9 +19,11 @@ $fontBold: 700;
 
 //TIME DELAY
 $fadeInOutMessage: 1s;
+$fadeInOutNavBar: 0.3s;
 
 :export {
   fadeInOutMessage: $fadeInOutMessage;
+  fadeInOutNavBar: $fadeInOutNavBar;
 }
 
 //CSS CODES

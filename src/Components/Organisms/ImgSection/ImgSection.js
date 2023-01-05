@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {useContext } from "react";
 import MainContext from "../../../Utils/MainContext";
 import LrgImg from "../../Atoms/LrgImg/LrgImg";
 import ImgList from "../../Molecules/ImgList/ImgList";

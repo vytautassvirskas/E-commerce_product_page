@@ -7,6 +7,7 @@ import Navbar from "../../Molecules/Navbar/Navbar";
 import UserCart from "../../Organisms/UserCart/UserCart";
 import NavIcon from "../../Atoms/NavIcon/NavIcon";
 import Close from "../../Atoms/Close/Close";
+import variables from "../../../Styles/Variables.scss";
 import "./Header.scss";
 
 const Header = () => {
@@ -14,14 +15,16 @@ const Header = () => {
   const [navBarMobile, setNavBarMobile] = useState(false);
   const { cartItem } = useContext(MainContext);
 
-  //sita paziureti ar palikti taip ar su useRef hook
   const handleHideNavbar = () => {
+    const delayVariable = variables.fadeInOutNavBar;
+    const delayTime = +delayVariable.slice(0, delayVariable.length - 1) * 1000;
+
     const ele = document.querySelector(".header__navbar-mobile-background");
     ele.classList.add("header__navbar-mobile-background-fadeOut");
-    console.log("ele: ", ele);
+
     setTimeout(() => {
       setNavBarMobile(false);
-    }, 300);
+    }, delayTime);
   };
   return (
     <header className="header">
@@ -47,7 +50,6 @@ const Header = () => {
             <div
               className="header__navbar-mobile-close"
               onClick={handleHideNavbar}
-              // onClick={()=>setNavBarMobile(false)}
             >
               <Close />
             </div>
@@ -55,7 +57,7 @@ const Header = () => {
           </div>
         </div>
       ) : null}
-      {console.log("HEADER component JSX render")}
+    
       {/* {upper code is header of mobile} */}
       <div className="header__user-cart-wrapper">
         <div

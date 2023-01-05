@@ -5,7 +5,7 @@ import "./User.scss";
 const User = () => {
   return (
     <>
-      <img className="user" src={UserImg} alt="user-photo" />
+      <img className="user" src={UserImg} alt="user" />
     </>
   );
 };

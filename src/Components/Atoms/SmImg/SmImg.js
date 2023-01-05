@@ -1,9 +1,8 @@
-import React,{memo} from 'react';
+import React, { memo } from "react";
 
 const SmImg = ({ img }) => {
-	console.log("SmImg komponentas renderinasi nors props nesikeicia")
 
-	return <img src={img} alt="product-photo"/>;
+  return <img src={img} alt="product" />;
 };
 
 export default memo(SmImg);

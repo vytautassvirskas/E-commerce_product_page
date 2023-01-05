@@ -7,8 +7,8 @@ import "./AddToCart.scss";
 
 const AddToCart = ({ setMessage, message }) => {
   const [amount, setAmout] = useState(0);
-  const [itemLimit, setItemLimit] = useState(10);
   const { cartItem, setCartItem, data } = useContext(MainContext);
+  const itemLimit = 10;
 
   const handleAdd = (e) => {
     //messages
@@ -58,7 +58,6 @@ const AddToCart = ({ setMessage, message }) => {
         amount: amount,
         title: data.info.title,
         currentPrice: data.info.currentPrice,
-        totalPrice: data.info.currentPrice * 3,
         img: data.images[0].smallImg,
       };
     });
@@ -82,7 +81,7 @@ const AddToCart = ({ setMessage, message }) => {
       return prevAmount - 1;
     });
   };
-  console.log("add to cart komeponentas renderinasi");
+  
   return (
     <div className="add-cart">
       <div className="add-cart__amount-wrapper">

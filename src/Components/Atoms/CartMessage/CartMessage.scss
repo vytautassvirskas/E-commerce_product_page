@@ -36,3 +36,9 @@
     opacity: 0;
   }
 }
+
+@media (width <=768px) {
+  .cart-message {
+    bottom: 150px;
+  }
+}

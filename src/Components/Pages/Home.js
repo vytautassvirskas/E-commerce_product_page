@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainContext from "../../Utils/MainContext";
 import { item as data } from "../../Utils/data.js";
 import ImgSection from "../Organisms/ImgSection/ImgSection";
@@ -11,7 +11,9 @@ import "./Home.scss";
 const Home = () => {
   const [lightbox, setLightbox] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [cartItem, setCartItem] = useState({});
+  const [cartItem, setCartItem] = useState(
+    () => JSON.parse(localStorage.getItem("cartItem")) || []
+  );
 
   const contextValue = {
     lightbox,
@@ -22,7 +24,12 @@ const Home = () => {
     setCartItem,
     data,
   };
-  // console.log("cartItem Home komponente: ",cartItem)
+
+  useEffect(() => {
+    cartItem !== [] &&
+      localStorage.setItem("cartItem", JSON.stringify(cartItem));
+  }, [cartItem]);
+
   return (
     <>
       <MainContext.Provider value={contextValue}>

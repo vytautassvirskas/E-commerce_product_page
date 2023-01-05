@@ -24,21 +24,22 @@
     @include flexSpaceBtwn;
     gap: 15px;
     padding-bottom: 20px;
+    flex-wrap: wrap;
   }
-  &__item-img{
+  &__item-img {
     width: 40px;
     height: 40px;
     border-radius: 5px;
     overflow: hidden;
   }
-  &__item-title{
+  &__item-title {
     font-size: 16px;
     color: $DarkGrayishBlue;
   }
-  &__item-price{
+  &__item-price {
     color: $DarkGrayishBlue;
   }
-  &__item-total-price{
+  &__item-total-price {
     color: $VeryDarkBlue;
     font-weight: $fontBold;
   }
@@ -46,8 +47,8 @@
     fill: $GrayishBlue;
     cursor: pointer;
     transition: fill 0.2s ease;
-    &:hover{
-    fill: $DarkGrayishBlue;
+    &:hover {
+      fill: $DarkGrayishBlue;
     }
   }
   &__checkout-btn {
@@ -56,11 +57,11 @@
       @include orangeBtnHover;
     }
   }
-  &__empty-container{
+  &__empty-container {
     @extend .user-cart__cart-container;
     @include flexCenter;
   }
-  &__empty{
+  &__empty {
     @include flexCenter;
     color: $DarkGrayishBlue;
     font-size: 14px;
@@ -68,9 +69,15 @@
   }
 }
 
-@media (width <=768px){
-  .user-cart{
-    right: auto;
+@media (width <=768px) {
+  .user-cart {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    &__cart-container {
+      min-width: auto;
+    }
   }
 }
-

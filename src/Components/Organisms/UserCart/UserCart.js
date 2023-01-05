@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "../../../Utils/MainContext.js";
 import MainContext from "../../../Utils/MainContext.js";
 import Delete from "../../Atoms/Delete/Delete";
-import ItemTitle from "../../Atoms/ItemTitle/ItemTitle.js";
 import SmImg from "../../Atoms/SmImg/SmImg";
 import "./UserCart.scss";
 
@@ -22,7 +21,7 @@ const UserCart = () => {
               <p className="user-cart__item-price">
                 &#36;{`${cartItem.currentPrice} x ${cartItem.amount} `}
                 <span className="user-cart__item-total-price">
-                  &#36;{cartItem.totalPrice}
+                  &#36;{cartItem.currentPrice * cartItem.amount}
                 </span>
               </p>
             </div>

@@ -14,10 +14,7 @@ const ItemSection = () => {
     <section className="item-section">
       <ItemText data={data.info} />
       <ItemPrice data={data.info} />
-      <AddToCart
-        setMessage={setMessage}
-        message={message}
-      />
+      <AddToCart setMessage={setMessage} message={message} />
       <CartMessage message={message} setMessage={setMessage} />
     </section>
   );
