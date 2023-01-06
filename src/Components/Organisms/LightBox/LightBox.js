@@ -13,23 +13,6 @@ const LightBox = () => {
   const { setLightbox, data, selectedIndex } = useContext(MainContext);
   const [lightboxIndex, setLightboxIndex] = useState(selectedIndex);
 
-  //ISTRINTI
-  // const handleNext = () => {
-  //   setLightboxIndex((prevValue) => {
-  //     if (prevValue === data.images.length - 1) return prevValue;
-
-  //     return prevValue + 1;
-  //   });
-  // };
-
-  // const handlePrevious = () => {
-  //   setLightboxIndex((prevValue) => {
-  //     if (prevValue == 0) return prevValue;
-
-  //     return prevValue - 1;
-  //   });
-  // };
-
   return (
     <section className="lightbox">
       <div className="lightbox__wrapper">
@@ -41,14 +24,22 @@ const LightBox = () => {
             <Close />
           </div>
           <LrgImg selectedIndex={lightboxIndex} data={data.images} />
-          <div
-            className="lightbox__next"
+          <div 
+            className={
+              lightboxIndex === data.images.length - 1
+                ? "lightbox__next--disabled"
+                : "lightbox__next"
+            }
             onClick={() => handleNext(setLightboxIndex, data)}
           >
             <Next />
           </div>
           <div
-            className="lightbox__previous"
+            className={
+              lightboxIndex === 0
+                ? "lightbox__previous--disabled"
+                : "lightbox__previous"
+            }
             onClick={() => handlePrevious(setLightboxIndex)}
           >
             <Previous />

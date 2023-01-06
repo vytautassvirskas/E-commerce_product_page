@@ -26,6 +26,10 @@ $fadeInOutNavBar: 0.3s;
   fadeInOutNavBar: $fadeInOutNavBar;
 }
 
+//responsive screen sizes
+$respSize: 768px;
+$respSize2: 1000px;
+
 //CSS CODES
 @mixin flexCenter {
   display: flex;

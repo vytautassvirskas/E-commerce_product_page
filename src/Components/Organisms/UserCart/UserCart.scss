@@ -3,11 +3,19 @@
 .user-cart {
   position: absolute;
   z-index: 1;
-  right: 90px;
+  right: 0px;
   top: 80px;
   background-color: $White;
   border-radius: 8px;
   box-shadow: 1px 1px 9px 2px rgba(0, 0, 0, 0.4);
+  @media (width <=$respSize) {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
   &__cart-name {
     font-size: 14px;
     color: $VeryDarkBlue;
@@ -15,69 +23,73 @@
     padding: 20px;
     border-bottom: 2px solid $LightGrayishBlue;
   }
+
   &__cart-container {
     padding: 20px;
     min-width: 350px;
     min-height: 170px;
+    @media (width <=$respSize) {
+      min-width: auto;
+    }
   }
+
   &__item-container {
     @include flexSpaceBtwn;
     gap: 15px;
     padding-bottom: 20px;
-    flex-wrap: wrap;
   }
+
   &__item-img {
     width: 40px;
     height: 40px;
     border-radius: 5px;
     overflow: hidden;
+    flex-shrink: 2;
+  }
+
+  &__item-info {
+    flex-shrink: 4;
   }
   &__item-title {
     font-size: 16px;
     color: $DarkGrayishBlue;
   }
+
   &__item-price {
     color: $DarkGrayishBlue;
   }
+
   &__item-total-price {
     color: $VeryDarkBlue;
     font-weight: $fontBold;
   }
-  &__delete-wrapper {
+
+  &__delete {
     fill: $GrayishBlue;
+    flex-shrink: 1;
     cursor: pointer;
     transition: fill 0.2s ease;
     &:hover {
       fill: $DarkGrayishBlue;
     }
   }
+
   &__checkout-btn {
     @include orangeBtn;
     &:hover {
       @include orangeBtnHover;
     }
   }
+
   &__empty-container {
     @extend .user-cart__cart-container;
     @include flexCenter;
   }
+
   &__empty {
     @include flexCenter;
     color: $DarkGrayishBlue;
     font-size: 14px;
     font-weight: $fontBold;
-  }
-}
-
-@media (width <=768px) {
-  .user-cart {
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    &__cart-container {
-      min-width: auto;
-    }
   }
 }

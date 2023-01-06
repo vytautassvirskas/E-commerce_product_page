@@ -3,21 +3,21 @@
 .header {
   @include flexSpaceBtwn;
   border-bottom: 2px solid $LightGrayishBlue;
+  position: relative;
+  transition: all 1s ease-in-out;
+  @media (width <= $respSize) {
+    padding: 20px 0;
+  }
 
-  &__logo-nav-wrapper {
-    @include flexCenter;
-  }
-  &__logo-burger-wrapper {
-    display: none;
-  }
-  &__navbar-mobile-background {
-    display: none;
-  }
   &__user-cart-wrapper {
     @include flexCenter;
     gap: 50px;
+    @media (width <= $respSize) {
+      gap: 20px;
+    }
   }
-  &__cart-img-wrapper {
+
+  &__cart-wrapper {
     position: relative;
     fill: $DarkGrayishBlue;
     cursor: pointer;
@@ -25,7 +25,10 @@
     &:hover {
       fill: $VeryDarkBlue;
     }
+    @media (width <= $respSize) {
+    }
   }
+
   &__cart-amount {
     position: absolute;
     padding: 1px 8px;
@@ -35,65 +38,7 @@
     right: -4px;
     background: $primaryorange;
     color: white;
-  }
-  &__user-img-wrapper {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }
-}
-
-@media (width <=1000px) {
-  .header {
-    padding: 20px 0;
-    &__logo-nav-wrapper {
-      display: none;
-    }
-    &__logo-burger-wrapper {
-      @include flexSpaceBtwn;
-      gap: 20px;
-      cursor: pointer;
-    }
-    &__navbar-mobile-background {
-      display: block;
-      position: absolute;
-      background: $Blacklightbox;
-      width: 100%;
-      // height: 100vh;
-      height: 100%;
-      top: 0;
-      z-index: 2;
-      left: 0;
-      opacity: 0;
-    }
-    &__navbar-mobile-background-fadeIn {
-      animation: fadeIn $fadeInOutNavBar forwards;
-    }
-
-    &__navbar-mobile-background-fadeOut {
-      animation: fadeOut $fadeInOutNavBar forwards;
-    }
-    &__navbar-mobile-wrapper {
-      background: white;
-      width: 70%;
-      height: 100%;
-      padding: 40px 40px;
-    }
-    &__navbar-mobile-close {
-      margin-bottom: 30px;
-      fill: $GrayishBlue;
-      cursor: pointer;
-      transition: fill 0.2s ease;
-      &:hover {
-        fill: $DarkGrayishBlue;
-      }
-    }
-    &__user-cart-wrapper {
-      gap: 20px;
-    }
-    &__user-img-wrapper {
-      width: 30px;
-      height: 30px;
+    @media (width <= $respSize) {
     }
   }
 }

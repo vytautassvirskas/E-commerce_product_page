@@ -1,12 +1,10 @@
 @import "../../../Styles/Variables.scss";
 
-.last-price{
-    color:$DarkGrayishBlue;
-    text-decoration: line-through;
-    font-weight: $fontBold;
-}
-@media (width<=768px){
-	.last-price{
-        font-size: 18px;
-	}
+.last-price {
+  color: $DarkGrayishBlue;
+  text-decoration: line-through;
+  font-weight: $fontBold;
+  @media (width<=$respSize) {
+    font-size: 18px;
+  }
 }

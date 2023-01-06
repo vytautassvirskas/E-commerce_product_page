@@ -6,10 +6,7 @@
   &__lrg-img {
     cursor: pointer;
   }
-}
-
-@media (width <= 768px) {
-  .imgs-section {
+  @media (width <= $respSize) {
     display: none;
   }
 }

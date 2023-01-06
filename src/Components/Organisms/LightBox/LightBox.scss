@@ -29,11 +29,23 @@
     @include nextPrvsBtn;
     top: 50%;
     right: -25px;
+    transition: all 0.3s ease-in-out;
+    &--disabled {
+      @extend .lightbox__next;
+      opacity: 0.5;
+      cursor: default;
+    }
   }
   &__previous {
     @include nextPrvsBtn;
     top: 50%;
     left: -25px;
+    transition: all 0.3s ease-in-out;
+    &--disabled {
+      @extend .lightbox__previous;
+      opacity: 0.5;
+      cursor: default;
+    }
   }
   &__list-wrapper {
     width: 100%;

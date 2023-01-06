@@ -7,19 +7,26 @@ import Previous from "../../Atoms/Previous/Previous";
 import "./ImgSectionMobile.scss";
 
 const ImgSectionMobile = () => {
-  const { data, selectedIndex, setSelectedIndex } =
-    useContext(MainContext);
+  const { data, selectedIndex, setSelectedIndex } = useContext(MainContext);
   return (
     <section className="imgs-section-mobile">
       <LrgImg selectedIndex={selectedIndex} data={data.images} />
       <div
-        className="imgs-section-mobile__next"
+        className={
+          selectedIndex === data.images.length - 1
+            ? "imgs-section-mobile__next--disabled"
+            : "imgs-section-mobile__next"
+        }
         onClick={() => handleNext(setSelectedIndex, data)}
       >
         <Next />
       </div>
       <div
-        className="imgs-section-mobile__previous"
+        className={
+          selectedIndex === 0
+            ? "imgs-section-mobile__previous--disabled"
+            : "imgs-section-mobile__previous"
+        }
         onClick={() => handlePrevious(setSelectedIndex)}
       >
         <Previous />

@@ -2,10 +2,10 @@ import React from "react";
 import UserImg from "../../../Assets/image-avatar.png";
 import "./User.scss";
 
-const User = () => {
+const User = (props) => {
   return (
     <>
-      <img className="user" src={UserImg} alt="user" />
+      <img {...props} className="user" src={UserImg} alt="user" />
     </>
   );
 };

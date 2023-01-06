@@ -1,38 +1,97 @@
 @import "../../../Styles/Variables.scss";
 
-.navigation {
+.nav {
+  @include flexCenter;
+  position: relative;
+  z-index: 100;
+  &__burger {
+    display: none;
+    cursor: pointer;
+    @media (width <= $respSize) {
+      @include flexSpaceBtwn;
+      margin-right: 20px;
+    }
+  }
+  &__logo {
+    margin-right: 50px;
+    cursor: pointer;
+  }
+  &__close {
+    display: none;
+    cursor: pointer;
+    @media (width <= $respSize) {
+      display: block;
+      margin-bottom: 30px;
+      fill: $GrayishBlue;
+      cursor: pointer;
+      transition: fill 0.2s ease-in-out;
+      &:hover {
+        fill: $DarkGrayishBlue;
+      }
+    }
+  }
+
   &__list {
     @include flexCenter;
     gap: 30px;
+    transition: all 0.3s ease-in-out;
+    @media (width <= $respSize) {
+      @include flexClmnCenter;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0;
+      position: absolute;
+      top: -25px;
+      left: -100%;
+      overflow: hidden;
+      background-color: white;
+      width: 0;
+      height: 100vh;
+      padding: 40px 0 0 40px;
+      &::before {
+        content: "";
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    &--open {
+      @extend .nav__list;
+      left: -20px;
+      width: 70vw;
+      &::before {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: $Blacklightbox;
+        opacity: 0;
+        z-index: -1;
+        opacity: 0.8;
+      }
+    }
   }
+
   &__item {
-    color: $DarkGrayishBlue;
     padding: 40px 0 40px;
     border-bottom: 3px solid transparent;
     cursor: pointer;
-    transition: border-bottom 0.2s ease, color 0.2s ease;
+    transition: border-bottom 0.2s ease-in-out, color 0.2s ease-in-out;
     &:hover {
       border-bottom: 3px solid $primaryorange;
-      color: $VeryDarkBlue;
     }
   }
-}
-@media (width <=1000px) {
-  .navigation {
-    &__list {
-      @include flexCenter;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
+  &__link {
+    color: $DarkGrayishBlue;
+    text-decoration: none;
+    &:hover {
+      color: $VeryDarkBlue;
     }
-    &__item {
+    @media (width <= $respSize) {
       font-weight: $fontBold;
       padding: 15px 0;
-      cursor: pointer;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease-in-out;
       &:hover {
         border-bottom: 3px solid transparent;
-        color: $VeryDarkBlue;
       }
     }
   }

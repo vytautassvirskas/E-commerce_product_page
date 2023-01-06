@@ -1,9 +1,8 @@
+@import "../../../Styles/Variables.scss";
+
 .lrg-image {
   border-radius: 15px;
-}
-
-@media (width<=768px) {
-  .lrg-image {
+  @media (width<=$respSize) {
     border-radius: 0;
     height: 100%;
     width: 100%;

@@ -26,7 +26,7 @@ const UserCart = () => {
               </p>
             </div>
             <div
-              className="user-cart__delete-wrapper"
+              className="user-cart__delete"
               onClick={() => setCartItem({})}
             >
               <Delete />

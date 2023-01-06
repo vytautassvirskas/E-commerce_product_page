@@ -1,17 +1,15 @@
 @import "../../../Styles/Variables.scss";
 
-.item-price-wrapper{
-    margin-bottom: 25px;
+.item-price-wrapper {
+  margin-bottom: 25px;
 
-    &__price{
-        @include flexCenter;
-        gap: 15px;
-    }
-}
+  &__price {
+    @include flexCenter;
+    gap: 15px;
+  }
 
-@media (width<=768px){
-	.item-price-wrapper{
-        @include flexSpaceBtwn;
-        width: 100%; 
-	}
+  @media (width<=$respSize) {
+    @include flexSpaceBtwn;
+    width: 100%;
+  }
 }

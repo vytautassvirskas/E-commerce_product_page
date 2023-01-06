@@ -17,6 +17,9 @@
   &__fadeOut {
     animation: fadeOut $fadeInOutMessage forwards;
   }
+  @media (width <=$respSize) {
+    bottom: 150px;
+  }
 }
 
 @keyframes fadeIn {
@@ -34,11 +37,5 @@
   }
   100% {
     opacity: 0;
-  }
-}
-
-@media (width <=768px) {
-  .cart-message {
-    bottom: 150px;
   }
 }

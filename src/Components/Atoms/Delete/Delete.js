@@ -1,5 +1,4 @@
 import React from "react";
-import "./Delete.scss";
 
 const Delete = () => {
   return (

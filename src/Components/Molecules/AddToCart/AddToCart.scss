@@ -6,6 +6,12 @@
   gap: 30px;
   width: 100%;
   margin-top: 30px;
+  @media (width <=1150px) {
+    @include flexClmnCenter;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
   &__amount-wrapper {
     @include flexCenter;
     justify-content: space-between;
@@ -14,7 +20,11 @@
     padding: 20px;
     background-color: $LightGrayishBlue;
     border-radius: 10px;
+    @media (width<=$respSize) {
+      width: 100%;
+    }
   }
+
   &__changer {
     @include flexCenter;
     width: 20px;
@@ -26,6 +36,7 @@
       fill: $primaryPaleorange;
     }
   }
+
   &__amount {
     font-weight: $fontBold;
     width: 100%;
@@ -36,15 +47,20 @@
       outline: none;
     }
   }
+
   &__cart {
     margin-right: 15px;
     fill: $White;
   }
+
   &__btn {
     @include orangeBtn;
     width: 50%;
     &:hover {
       @include orangeBtnHover;
+    }
+    @media (width<=$respSize) {
+      width: 100%;
     }
   }
 }
@@ -56,23 +72,4 @@
 }
 .add-cart__amount[type="number"] {
   -moz-appearance: textfield;
-}
-
-@media (width <=1150px) {
-  .add-cart {
-    @include flexClmnCenter;
-    align-items: flex-start;
-    gap: 15px;
-  }
-}
-
-@media (width<=768px) {
-  .add-cart {
-    &__amount-wrapper {
-      width: 100%;
-    }
-    &__btn {
-      width: 100%;
-    }
-  }
 }

@@ -4,20 +4,27 @@
   width: 100vw;
   height: 350px;
   position: relative;
+  @media (width >= $respSize) {
+    display: none;
+  }
   &__next {
     @include nextPrvsBtn;
     top: calc(50% - 25px); //subtract half of diameter of btn
     right: 15px;
+    &--disabled {
+      @extend .imgs-section-mobile__next;
+      opacity: 0.5;
+      cursor: default;
+    }
   }
   &__previous {
     @include nextPrvsBtn;
     top: calc(50% - 25px); //subtract half of diameter of btn
     left: 15px;
-  }
-}
-
-@media (width >= 768px) {
-  .imgs-section-mobile {
-    display: none;
+    &--disabled {
+      @extend .imgs-section-mobile__previous;
+      opacity: 0.5;
+      cursor: default;
+    }
   }
 }
