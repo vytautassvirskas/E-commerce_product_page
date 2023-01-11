@@ -19,9 +19,9 @@ const Navbar = () => {
       <NavIcon className="nav__burger" onClick={() => setNavMobile(true)} />
       <Logo className="nav__logo" />
       <ul className={navMobile ? "nav__list--open" : "nav__list"}>
-        <div className="nav__close" onClick={() => setNavMobile(false)}>
+        <li className="nav__close" onClick={() => setNavMobile(false)}>
           <Close />
-        </div>
+        </li>
         <li className="nav__item">
           <a href="#" className="nav__link">
             Collections
