@@ -88,7 +88,7 @@ const AddToCart = ({ setMessage, message }) => {
         <div className="add-cart__changer" onClick={handleDecrease}>
           <Minus />
         </div>
-        <label htmlFor="input-number"></label>
+        <label htmlFor="input-number" className="add-cart__label"></label>
         <input
           id="input-number"
           className="add-cart__amount"

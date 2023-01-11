@@ -36,6 +36,9 @@
       fill: $primaryPaleorange;
     }
   }
+  &__label {
+    display: none;
+  }
 
   &__amount {
     font-weight: $fontBold;
