@@ -81,14 +81,16 @@ const AddToCart = ({ setMessage, message }) => {
       return prevAmount - 1;
     });
   };
-  
+
   return (
     <div className="add-cart">
       <div className="add-cart__amount-wrapper">
         <div className="add-cart__changer" onClick={handleDecrease}>
           <Minus />
         </div>
+        <label htmlFor="input-number"></label>
         <input
+          id="input-number"
           className="add-cart__amount"
           type="number"
           value={amount}
